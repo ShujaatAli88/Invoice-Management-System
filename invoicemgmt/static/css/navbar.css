@@ -1,0 +1,31 @@
+.navbar
+{
+    background-color: rgb(58, 145, 140);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header
+{
+    color: white;
+    margin-right: 60px;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+
+.iced
+{
+    color: red;
+}
+
+.collapse>ul.navbar-nav>li.nav-item>a.nav-link:hover{
+    color: rgb(179, 103, 103);
+}
+
+.collapse>ul.navbar-nav>li.nav-item>a.nav-link-last{
+    background-color: red;
+}
+
+.collapse>ul.navbar-nav>li.nav-item>a.nav-link{
+    margin-top: 20px;
+}

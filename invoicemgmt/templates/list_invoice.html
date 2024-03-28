@@ -1,0 +1,55 @@
+{% load static %}
+{% include "navbar.html" %}
+
+<html>
+
+<head>
+    <title>
+        {{title}}
+    </title>
+    <link href={% static "css/allinvoices.css" %} rel="stylesheet"></link>
+</head> 
+   <body>
+
+    <div class="row justify-content-center mt-2">
+        <div class="col-lg-10">
+           <center><h1 class="alled">Details <i class="fa-solid fa-list"></i></h1></center>
+          <div class="my_search_bar">
+            <form class="d-flex" role="search" method="POST" action="">
+              {% csrf_token %}
+              <input class="form-control me-2" type="search" style="width: 60%;" name="invoice_number" placeholder="Invoice Number" aria-label="Search">
+              <button class="btn btn-outline-secondary" type="submit">Search <i class="fa-brands fa-searchengin"></i></button>
+          </form>
+          </div>
+            <table class="table table-dark table-striped">
+            <thead class="my_header_table">
+                <tr>
+                  <th scope="col">Invoice id</th>
+                  <th scope="col">Invoice Number</th>
+                  <th scope="col">customer Name</th>
+                  <th scope="col">Invoice Date</th>
+                  <th scope="col">Invoice Type</th>
+                  <th scope="col"><center><i class="fa-regular fa-pen-to-square"></i>Update Or <i class="fa-solid fa-trash"></i>Delete</center></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for instance in querySet %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{instance.invoice_number}}</td>
+                    <td>{{instance.name}}</td>
+                    <td>{{instance.invoice_date}}</td>
+                    <td>{{instance.invoice_type}}</td>
+                    <td>
+                      <center><a href="{% url 'update_invoice' pk=instance.id %}"><button class="btn btn-success"><i class="fa-regular fa-pen-to-square"></i></button></a> 
+                        <a href="{% url 'delete_invoice' pk=instance.id %}"><button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button></center></a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+          </table>
+        </div>
+    </div>
+   </body>
+
+</html>

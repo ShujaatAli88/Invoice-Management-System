@@ -1,0 +1,26 @@
+.ice
+{
+    color: white;
+}
+
+.mb-3
+{
+   font-weight: bold;
+}
+
+.form-bg
+{
+    background-color: #343a40  !important;
+    color: white;             
+    border-radius: 10px;  
+}
+
+.over
+{
+    color: rgb(179, 103, 103)
+}
+
+.list-group-item{
+    margin: 2px 0 !important;
+}
+

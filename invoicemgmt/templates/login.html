@@ -1,0 +1,35 @@
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="{% static 'css/login.css' %}" rel="stylesheet"></link>
+</head>
+
+<body>
+    <div class="container"> 
+       <div>
+        <h1>
+            <strong class="my_style">Log</strong>in
+        </h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3 row">
+                  <input type="email" class="form-control"  placeholder="Email" name="email">
+              </div> 
+                <div class="mb-3 row">
+                  <input type="password" class="form-control"  placeholder="Password" name="pass1">
+                </div>     
+              <div class="container-small">
+                <button type="Submit" class="btn btn-success">Login</button>
+                <div class="already">
+                    <strong class="sm-gis">New U</strong>ser<strong class="sm-gis">?</strong><a href="{% url 'home' %}"> SignUp</a>
+                </div>
+              </div>
+        </form>
+       </div>
+    </div>
+</body>
+
+</html>
+

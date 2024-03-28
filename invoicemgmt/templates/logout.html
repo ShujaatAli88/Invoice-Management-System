@@ -1,0 +1,24 @@
+{% load static %}
+
+<html>
+<head>
+    {% comment %} <link href="{% static 'css/log_out.css' %}"></link> {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+   <div class="row justify-content-center mt-3">
+    <div class="col-lg-8">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Do you Want to logout?</h4>
+          </div>
+          <button type="Submit" class="btn btn-danger">
+            <a class="logougged_out" href="{% url 'home' %}">Logout</a>
+          </button>
+          <a href="{% url 'dashboard' %}" class="btn btn-success">Cancel</a>
+    </form>
+   </div>
+</div>
+</body>
+</html>

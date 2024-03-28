@@ -1,0 +1,29 @@
+.my_header_table
+{
+   background-color: rgb(218, 157, 77);
+   font-weight: bold;
+   color: black;
+}
+
+.alled
+{
+  color: black;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;   
+}
+
+.btn-outline-secondary
+{
+  margin-left: 20px;
+}
+
+
+.d-flex > input.form-control:hover
+{
+  background-color: rgb(38, 39, 39);
+  color: white;
+}
+
+table.table > thead.my_header_table >tr>hd.actions-my
+{
+   padding-left: 20px;
+}
